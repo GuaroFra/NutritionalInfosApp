@@ -11,6 +11,37 @@
       <rd:DataSourceID>2eb6c690-9861-4e57-a99c-afd6f2ad0cd8</rd:DataSourceID>
     </DataSource>
   </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="ShowPaymentMethodCode">
+          <DataField>ShowPaymentMethodCode</DataField>
+        </Field>
+        <Field Name="CustomerFiltersText">
+          <DataField>CustomerFiltersText</DataField>
+        </Field>
+        <Field Name="Customer_No">
+          <DataField>Customer_No</DataField>
+        </Field>
+        <Field Name="Customer_Name">
+          <DataField>Customer_Name</DataField>
+        </Field>
+        <Field Name="Customer_PaymentMethodCode">
+          <DataField>Customer_PaymentMethodCode</DataField>
+        </Field>
+        <Field Name="PaymentMethod_Code">
+          <DataField>PaymentMethod_Code</DataField>
+        </Field>
+        <Field Name="PaymentMethod_Description">
+          <DataField>PaymentMethod_Description</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -1521,38 +1552,4 @@ End Function
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Fields>
-        <Field Name="ExternalText">
-          <DataField>ExternalText</DataField>
-        </Field>
-        <Field Name="ShowPaymentMethodCode">
-          <DataField>ShowPaymentMethodCode</DataField>
-        </Field>
-        <Field Name="CustomerFiltersText">
-          <DataField>CustomerFiltersText</DataField>
-        </Field>
-        <Field Name="Customer_No">
-          <DataField>Customer_No</DataField>
-        </Field>
-        <Field Name="Customer_Name">
-          <DataField>Customer_Name</DataField>
-        </Field>
-        <Field Name="Customer_PaymentMethodCode">
-          <DataField>Customer_PaymentMethodCode</DataField>
-        </Field>
-        <Field Name="PaymentMethod_Code">
-          <DataField>PaymentMethod_Code</DataField>
-        </Field>
-        <Field Name="PaymentMethod_Description">
-          <DataField>PaymentMethod_Description</DataField>
-        </Field>
-      </Fields>
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-    </DataSet>
-  </DataSets>
 </Report>
