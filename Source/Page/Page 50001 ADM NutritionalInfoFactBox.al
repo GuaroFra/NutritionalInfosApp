@@ -1,9 +1,9 @@
-page 50001 "ADM Nutr. Info FactBox"
+page 50001 "ADM Nutr. Info Factbox"
 {
-    Caption = 'PageName';
+    Caption = 'Nutritional Info Factbox';
     PageType = ListPart;
-    // UsageCategory = Lists;
-    // ApplicationArea = All;
+    //UsageCategory = Lists;
+    //ApplicationArea = All;
     SourceTable = "ADM Nutritional Information";
     //SourceTableView =
 
@@ -25,21 +25,8 @@ page 50001 "ADM Nutr. Info FactBox"
 
             }
         }
+
     }
 
-    actions
-    {
-        area(Processing)
-        {
-            action(ActionName)
-            {
-                ApplicationArea = All;
 
-                trigger OnAction();
-                begin
-
-                end;
-            }
-        }
-    }
 }

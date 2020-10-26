@@ -1,42 +1,55 @@
-page 50000 "ADM Nutritional Info"
+page 50000 "ADM Nutritional Informations"
 {
+    Caption = 'Nutritional Infos';
     PageType = List;
-    ApplicationArea = All; //do not forget
-    UsageCategory = Lists; //do not forget
+    ApplicationArea = All;
+    UsageCategory = Lists;
     SourceTable = "ADM Nutritional Information";
+
 
     layout
     {
         area(Content)
         {
-            repeater(NutritionalsInfo)
+            repeater(Group)
             {
                 field("Item No."; "Item No.")
                 {
                     ApplicationArea = All;
-                    //FieldPropertyName = FieldPropertyValue
+                    StyleExpr = textExpression;
+
                 }
-                field("Item Description"; "Item description")
+                field("Item description"; "Item description")
                 {
                     ApplicationArea = All;
-                    //FieldPropertyName = FieldPropertyValue
+                    StyleExpr = textExpression;
+                    //FieldPropertyName = FieldPropertyValue;
                 }
-                field("Item Description 2"; "Item Description 2")
+                field("Item description 2"; "Item description 2")
                 {
                     ApplicationArea = All;
-                    //FieldPropertyName = FieldPropertyValue
+                    StyleExpr = textExpression;
+                    //FieldPropertyName = FieldPropertyValue;
                 }
                 field("Nutritional Type"; "Nutritional Type")
                 {
                     ApplicationArea = All;
-                    //FieldPropertyName = FieldPropertyValue
+                    StyleExpr = textExpression;
+                    //FieldPropertyName = FieldPropertyValue;
                 }
+
                 field(Amount; Amount)
                 {
                     ApplicationArea = All;
-                    //FieldPropertyName = FieldPropertyValue
+                    StyleExpr = textExpression;
+                    //FieldPropertyName = FieldPropertyValue;
                 }
+
             }
+        }
+        area(Factboxes)
+        {
+
         }
     }
 
@@ -48,14 +61,28 @@ page 50000 "ADM Nutritional Info"
             {
                 ApplicationArea = All;
 
-                trigger OnAction()
+                trigger OnAction();
                 begin
 
                 end;
             }
         }
     }
+    trigger OnAfterGetRecord()
+    var
+
+
+    begin
+        if Rec.Amount < 10 then
+            textExpression := 'Standard';
+        if (Rec.Amount >= 10) and (Rec.Amount < 100) then
+            textExpression := 'Favorable';
+        if Rec.Amount >= 100 then
+            textExpression := 'Attention';
+
+    end;
+
 
     var
-        myInt: Integer;
+        textExpression: Text;
 }

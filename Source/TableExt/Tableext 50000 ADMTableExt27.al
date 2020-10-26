@@ -6,10 +6,11 @@ tableextension 50000 "ADM TableExt50000" extends Item
         field(50000; "total calories"; Decimal)
         {
             DataClassification = ToBeClassified;
-            Caption = 'Total calories';
+            Caption = 'Total Calories';
+
         }
+
     }
 
-    var
-        myInt: Integer;
+
 }
