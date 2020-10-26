@@ -23,7 +23,7 @@ pageextension 50002 "ADM PageExt 50002" extends "Customer List"
                 begin
                     CurrPage.SetSelectionFilter(Customer);
                     // Report.Run(50000, false, false, Customer);
-                    ExampleReport.SetExternalText('Testo inserito dall''esterno');
+                    //ExampleReport.SetExternalText('Testo inserito dall''esterno');
                     ExampleReport.SetTableView(Customer);
                     ExampleReport.Run();
                 end;
