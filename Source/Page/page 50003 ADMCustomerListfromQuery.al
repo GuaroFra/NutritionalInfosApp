@@ -76,7 +76,7 @@ page 50003 "ADM Customer List from Query"
     begin
 
         //CustomerRecord.Copy(Rec, true);
-        FillRecValues(Rec);
+        // FillRecValues(Rec);
 
         //CurrPage.Update(true);
 
@@ -108,7 +108,7 @@ page 50003 "ADM Customer List from Query"
     end;
 
 
-    procedure FillRecValues(TempCustomer: Record Customer)
+    procedure FillRecValues(TempCustomer: Record Customer temporary)
     var
         CustomerRecord: Record Customer temporary;
         CustomerListQuery: Query "ADM Customer List Query";

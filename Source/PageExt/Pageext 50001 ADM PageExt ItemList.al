@@ -1,4 +1,4 @@
-pageextension 50001 "ADM Page Extension" extends "Item List" //31
+pageextension 50001 "ADM PageExt50001" extends "Item List" //31
 {
     layout
     {
@@ -99,24 +99,35 @@ pageextension 50001 "ADM Page Extension" extends "Item List" //31
                 end;
             }
 
+            action(ExportItems)
+            {
+                ApplicationArea = All;
+                Image = Export;
+                RunObject = xmlport "ADM Export All Items";
+            }
+
+
             action(ExportAllItems)
             {
                 ApplicationArea = All;
-                Caption = 'Export all items';
+                Caption = 'Esporta Tutti gli Articoli';
                 Image = ExportDatabase;
                 RunObject = xmlport "ADM Export All Items";
             }
+
             action(ImportItems)
             {
                 ApplicationArea = All;
-                Caption = 'Import items';
+                Caption = 'Importa Articoli';
                 Image = Import;
                 RunObject = xmlport "ADM Import Items";
             }
         }
     }
 
-
+    /// <summary> 
+    /// Description for MyProcedure.
+    /// </summary>
     local procedure MyProcedure()
     var
         TempADMNutritionalInformation: Record "ADM Nutritional Information" temporary;

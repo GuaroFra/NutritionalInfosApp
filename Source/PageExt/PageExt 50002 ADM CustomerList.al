@@ -5,7 +5,7 @@ pageextension 50002 "ADM PageExt 50002" extends "Customer List"
         // Add changes to page layout here
         addafter("No.")
         {
-            field("Payment Method Code"; "Payment Method Code")
+            field("Payment Method Code";"Payment Method Code")
             {
                 ApplicationArea = ALL;
             }
@@ -32,26 +32,12 @@ pageextension 50002 "ADM PageExt 50002" extends "Customer List"
                     CurrPage.SetSelectionFilter(Customer);
 
                     // Report.Run(50000, false, false, Customer);
-
+                    
                     ExampleReport.SetExternalText('Testo inserito dall''esterno');
                     ExampleReport.SetTableView(Customer);
                     ExampleReport.Run();
 
                 end;
-            }
-            action(ExportCustomerList)
-            {
-                ApplicationArea = All;
-                Caption = 'Export customer list';
-                Image = ExportDatabase;
-                RunObject = xmlport "ADM XMLPort ExportClients";
-            }
-            action(ImportCustomerList)
-            {
-                ApplicationArea = All;
-                Caption = 'Import customer list';
-                Image = Import;
-                RunObject = xmlport "ADM Import Customers";
             }
         }
     }

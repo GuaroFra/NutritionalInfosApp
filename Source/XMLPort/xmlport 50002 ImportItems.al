@@ -1,12 +1,13 @@
 xmlport 50002 "ADM Import Items"
 {
+
     Direction = Import;
     FieldSeparator = '<TAB>';
-    //FieldDelimiter = '';
+    // FieldDelimiter = '';
     UseRequestPage = false;
+    // Format = Xml;
     Format = VariableText;
     DefaultFieldsValidation = true;
-
 
     schema
     {
@@ -14,35 +15,48 @@ xmlport 50002 "ADM Import Items"
         {
             tableelement(ItemNode; Item)
             {
+
                 AutoUpdate = true;
+
+
                 fieldattribute(NodeName3; ItemNode."No.")
                 {
 
                 }
+
                 fieldattribute(NodeName4; ItemNode.Description)
                 {
 
                 }
+
                 fieldattribute(NodeName5; ItemNode."Base Unit of Measure")
                 {
 
                 }
+
                 fieldattribute(NodeName6; ItemNode."Gross Weight")
                 {
 
                 }
+
                 fieldattribute(NodeName7; ItemNode."Net Weight")
                 {
 
                 }
+
                 fieldattribute(NodeName8; ItemNode."Item Category Code")
                 {
 
                 }
+
                 fieldattribute(NodeName9; ItemNode."Item Disc. Group")
                 {
 
+
                 }
+
+
+
             }
         }
     }
@@ -55,17 +69,18 @@ xmlport 50002 "ADM Import Items"
     //         {
     //             group(Options)
     //             {
-    //                 Caption = 'Options';
-    //                 field(Name; ExportOnlyFirstTen)
+    //                 Caption = 'Opzioni';
+
+    //                 field(Name; ExportOnlyFirstTenRecs)
     //                 {
     //                     ApplicationArea = All;
-    //                     Caption = 'Export only first 10 records';
+    //                     Caption = 'Esporta solo i primi 10 Records';
     //                 }
 
-    //                 field(DiscountGroupCodeToExport; DiscountGroupCodeToExport)
+    //                 field(DiscountGroupToExportField; DiscountGroupCodeToExport)
     //                 {
     //                     ApplicationArea = All;
-    //                     Caption = 'Gruppo sconto da esportare';
+    //                     Caption = 'Gruppo Sconto da Esportare';
     //                     TableRelation = "Item Discount Group";
     //                 }
     //             }
@@ -85,8 +100,18 @@ xmlport 50002 "ADM Import Items"
     // }
 
 
+    trigger OnPreXmlPort()
+    begin
+
+    end;
+
+
+
     var
         CurrentRecordNumber: Integer;
-        ExportOnlyFirstTen: Boolean;
+        ExportOnlyFirstTenRecs: Boolean;
+
         DiscountGroupCodeToExport: Code[20];
 }
+
+
