@@ -103,6 +103,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ADM Data From Query - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 4247333299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SalesOrderReport</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Sales Order Vendors - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3674921282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lista Clienti Custom</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -143,6 +148,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report ADM Report Example - ReportLabel Page_Lbl</note>
         </trans-unit>
+        <trans-unit id="XmlPort 4261430965 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort ADM Export All Items - Control Options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4261430965 - Control 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export only first 10 records</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort ADM Export All Items - Control Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4261430965 - Control 3403578380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gruppo sconto da esportare</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort ADM Export All Items - Control DiscountGroupCodeToExport - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 4156066953 - Control 1909642108 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
           <source>Nutritional Infos</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -178,30 +198,50 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt50000 - Action ADM Nutritionals - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 498796274 - Action 3334773474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+        <trans-unit id="PageExtension 1020730022 - Action 3334773474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
           <source>Total Calories</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt50001 - Action ADM Total Calories - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ADM Total Calories - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 498796274 - Action 3334773474 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+        <trans-unit id="PageExtension 1020730022 - Action 3334773474 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
           <source>Show the sum of calories for every item.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt50001 - Action ADM Total Calories - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ADM Total Calories - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 498796274 - Action 1420041040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+        <trans-unit id="PageExtension 1020730022 - Action 1420041040 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
           <source>Summary Values (ADM)</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt50001 - Action ADM Summary Values - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ADM Summary Values - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 498796274 - Action 1420041040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+        <trans-unit id="PageExtension 1020730022 - Action 1420041040 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
           <source>Executes the "Summary Values (ADM)" action.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt50001 - Action ADM Summary Values - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ADM Summary Values - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1020730022 - Action 4245079381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Export all items</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ExportAllItems - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1020730022 - Action 2307914533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
+          <source>Import items</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM Page Extension - Action ImportItems - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 629267631 - Action 1005665750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
           <source>Stampa Lista Clienti Custom</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt 50002 - Action PrintCustomCustomerListAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 629267631 - Action 1048947734 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
+          <source>Export customer list</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt 50002 - Action ExportCustomerList - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 629267631 - Action 2781418741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2901867346">
+          <source>Import customer list</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ADM PageExt 50002 - Action ImportCustomerList - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2587593718 - Field 1716913698 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Total Calories</source>

@@ -98,8 +98,24 @@ pageextension 50001 "ADM Page Extension" extends "Item List" //31
                     MyProcedure();
                 end;
             }
+
+            action(ExportAllItems)
+            {
+                ApplicationArea = All;
+                Caption = 'Export all items';
+                Image = ExportDatabase;
+                RunObject = xmlport "ADM Export All Items";
+            }
+            action(ImportItems)
+            {
+                ApplicationArea = All;
+                Caption = 'Import items';
+                Image = Import;
+                RunObject = xmlport "ADM Import Items";
+            }
         }
     }
+
 
     local procedure MyProcedure()
     var
