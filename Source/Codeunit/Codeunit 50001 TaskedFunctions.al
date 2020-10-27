@@ -9,9 +9,14 @@ codeunit 50001 "ADM Tasked Functions"
         case "Parameter String" of
             InventorySetup."Auto Bl. Items Par.St. Task":
                 AutoBlockItems();
+            'Block_Customers':
+                AutoBlockCustomers();
         end;
     end;
 
+    /// <summary> 
+    /// Description for AutoBlockItems.
+    /// </summary>
     procedure AutoBlockItems()
     var
         Item: Record Item;
@@ -24,6 +29,27 @@ codeunit 50001 "ADM Tasked Functions"
                 Item.Validate(Blocked, true);
                 Item.Modify(true);
             until Item.Next() = 0;
+    end;
+
+    /// <summary> 
+    /// Description for AutoBlockCustomers.
+    /// </summary>
+    procedure AutoBlockCustomers()
+    var
+        Customer: Record Customer;
+        CustomerLedgerEntry: Record "Cust. Ledger Entry";
+    begin
+        if Customer.FindSet() then
+            repeat
+                CustomerLedgerEntry.Reset();
+                CustomerLedgerEntry.SetRange(Open, true);
+                CustomerLedgerEntry.SetRange("Customer No.", Customer."No.");
+                CustomerLedgerEntry.SetFilter("Due Date", '<%1', WorkDate());
+                if CustomerLedgerEntry.IsEmpty then begin
+                    Customer.Validate(Blocked, Customer.Blocked::All);
+                    Customer.Modify(true);
+                end;
+            until Customer.Next() = 0;
     end;
 
     var
