@@ -7,23 +7,24 @@ table 50000 "ADM Nutritional Information"
     {
         field(1; "Item No."; code[20])
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
             Caption = 'Item No.';
             TableRelation = item."No.";
-        }
 
-        field(20; "Item description"; Text[50])
-        {
-            DataClassification = ToBeClassified;
-            Caption = 'Item description';
             trigger OnValidate()
             var
                 item: Record Item;
             begin
                 item.Get(Rec."Item No.");
                 Rec."Item description" := item.Description;
-                rec.Modify();
+                //rec.Modify();
             end;
+        }
+
+        field(20; "Item description"; Text[100])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Item description';
         }
 
         field(30; "Item Description 2"; Text[50])
@@ -38,17 +39,17 @@ table 50000 "ADM Nutritional Information"
 
         field(40; "Nutritional Type"; Enum "ADM Nutritional Info Type")
         {
-            DataClassification = ToBeClassified;
+            DataClassification = CustomerContent;
+            Caption = 'Nutritional Information Type';
         }
 
         field(50; "Amount"; Decimal)
         {
+            DataClassification = CustomerContent;
             Caption = 'Amount';
-
         }
 
     }
-
 
     keys
     {
@@ -59,35 +60,6 @@ table 50000 "ADM Nutritional Information"
     }
 
 
-    // trigger OnInsert()
-    // var
-    //     maxAmount: Integer;
-    //     ADM: Record "ADM Nutritional Information";
-    // begin
-    //     maxAmount := 0;
-    //     ADM.SetRange("Item No.", Rec."Item No.");
-    //     if ADM.CalcSums(Amount) then
-    //         maxAmount := Rec.Amount + ADM.Amount;
-    //     if maxAmount >= 2000 then
-    //         Error('Te sum of the calories');
-
-
-    // end;
-
-    // trigger OnModify()
-    // var
-    //     maxAmount: Integer;
-    //     ADM: Record "ADM Nutritional Information";
-    // begin
-    //     maxAmount := 0;
-    //     ADM.SetRange("Item No.", Rec."Item No.");
-    //     if ADM.CalcSums(Amount) then
-    //         maxAmount := Rec.Amount + ADM.Amount;
-    //     if maxAmount >= 2000 then
-    //         Error('Te sum of the calories');
-
-
-    // end;
 
 
 }

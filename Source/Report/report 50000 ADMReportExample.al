@@ -10,7 +10,8 @@ report 50000 "ADM Report Example"
     {
         dataitem(Customer; Customer)
         {
-            column(ExternalText; ExternalText)
+
+            column(ExternalText;ExternalText)
             {
 
             }
@@ -20,7 +21,7 @@ report 50000 "ADM Report Example"
 
             }
 
-            column(CustomerFiltersText; CustomerFiltersText)
+            column(CustomerFiltersText;CustomerFiltersText)
             {
 
             }
@@ -90,7 +91,7 @@ report 50000 "ADM Report Example"
 
                     }
 
-                    field(ShowPaymentMethodCode; ShowPaymentMethodCode)
+                    field(ShowPaymentMethodCode;ShowPaymentMethodCode)
                     {
                         ApplicationArea = all;
                         Caption = 'Mostra Codici Met. Pag.';
@@ -133,8 +134,10 @@ report 50000 "ADM Report Example"
         CustomerFiltersText: Text;
         ExternalText: Text;
 
-    // procedure SetExternalText(ValueText: Text)
-    // begin
-    //     ExternalText := ValueText;
-    // end;
+
+    procedure SetExternalText(ValueText: Text)
+    begin
+        ExternalText := ValueText;
+    end;
+
 }

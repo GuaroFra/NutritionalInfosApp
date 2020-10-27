@@ -1,31 +1,47 @@
-report 50001 "ADM Example PRocessing Report"
+report 50001 "ADM Example Processing Report"
 {
     UsageCategory = Tasks;
     ApplicationArea = All;
+
     Caption = 'Aggiorna Met. Pagamento Clienti';
+
     ProcessingOnly = true;
     UseRequestPage = false;
 
     dataset
     {
-        dataitem(Customer; Customer)
+        dataitem(Customer_DataItem; Customer)
         {
+
+            // DataItemTableView = WHERE("Payment Method Code" = filter(''));
+
             trigger OnPreDataItem()
             begin
-                Customer.SetRange("Payment Method Code", '');
+                Customer_DataItem.SetRange("Payment Method Code", '');
             end;
 
             trigger OnAfterGetRecord()
             var
                 Customer_Edit: Record Customer;
             begin
-                Customer_Edit.Get(Customer."No.");
+                Customer_Edit.Get(Customer_DataItem."No.");
                 Customer_Edit.Validate("Payment Method Code", 'PAYPAL');
+                // Customer_Edit."Payment Method Code" := 'NONESISTE';
                 Customer_Edit.Modify(true);
+
+                EditCounter += 1;
             end;
         }
     }
 
+    trigger OnPostReport()
+    begin
+        if GuiAllowed() then
+            Message('Modificati Nr. ' + Format(EditCounter) + ' Records.');
+    end;
+
+
+
     var
-        myInt: Integer;
+        EditCounter: Integer;
 }

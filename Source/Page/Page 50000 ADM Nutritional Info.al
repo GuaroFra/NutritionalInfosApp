@@ -5,7 +5,7 @@ page 50000 "ADM Nutritional Informations"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = "ADM Nutritional Information";
-
+    DelayedInsert = true;
 
     layout
     {
@@ -13,35 +13,39 @@ page 50000 "ADM Nutritional Informations"
         {
             repeater(Group)
             {
-                field("Item No."; "Item No.")
+                field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
-                    StyleExpr = textExpression;
+                    StyleExpr = tmpStyle;
+                    ToolTip = 'Specifies the value of the "Item No." field.';
+                }
+                field("Item description"; Rec."Item description")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = tmpStyle;
+                    ToolTip = 'Specifies the value of the "Item description" field.';
+                    //FieldPropertyName = FieldPropertyValue;
+                }
+                field("Item description 2"; Rec."Item description 2")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = tmpStyle;
+                    ToolTip = 'Specifies the value of the "Item Description 2" field.';
+                    //FieldPropertyName = FieldPropertyValue;
+                }
+                field("Nutritional Type"; Rec."Nutritional Type")
+                {
+                    ApplicationArea = All;
+                    StyleExpr = tmpStyle;
+                    ToolTip = 'Specifies the value of the "Nutritional Information Type" field.';
+                    //FieldPropertyName = FieldPropertyValue;
+                }
 
-                }
-                field("Item description"; "Item description")
+                field(Amount; Rec.Amount)
                 {
                     ApplicationArea = All;
-                    StyleExpr = textExpression;
-                    //FieldPropertyName = FieldPropertyValue;
-                }
-                field("Item description 2"; "Item description 2")
-                {
-                    ApplicationArea = All;
-                    StyleExpr = textExpression;
-                    //FieldPropertyName = FieldPropertyValue;
-                }
-                field("Nutritional Type"; "Nutritional Type")
-                {
-                    ApplicationArea = All;
-                    StyleExpr = textExpression;
-                    //FieldPropertyName = FieldPropertyValue;
-                }
-
-                field(Amount; Amount)
-                {
-                    ApplicationArea = All;
-                    StyleExpr = textExpression;
+                    StyleExpr = tmpStyle;
+                    ToolTip = 'Specifies the value of the "Amount" field.';
                     //FieldPropertyName = FieldPropertyValue;
                 }
 
@@ -57,32 +61,14 @@ page 50000 "ADM Nutritional Informations"
     {
         area(Processing)
         {
-            action(ActionName)
-            {
-                ApplicationArea = All;
-
-                trigger OnAction();
-                begin
-
-                end;
-            }
         }
     }
+
     trigger OnAfterGetRecord()
-    var
-
-
     begin
-        if Rec.Amount < 10 then
-            textExpression := 'Standard';
-        if (Rec.Amount >= 10) and (Rec.Amount < 100) then
-            textExpression := 'Favorable';
-        if Rec.Amount >= 100 then
-            textExpression := 'Attention';
-
+        tmpStyle := 'Favorable';
     end;
 
-
     var
-        textExpression: Text;
+        tmpStyle: Text;
 }

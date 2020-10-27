@@ -1,4 +1,4 @@
-report 50002 "Sales Order Vendors"
+report 50003 "Sales Order Vendors"
 {
     UsageCategory = Administration;
     ApplicationArea = All;
